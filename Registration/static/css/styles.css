@@ -1,0 +1,47 @@
+body {
+    font-family: Arial; 
+    margin: 0;
+    background: #e7b3b3;
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding: 20px; 
+    text-align: center;
+  }
+
+  /* Styling the navbar */
+  nav {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      padding: 10px;
+  }
+  
+  nav a {
+      text-decoration: none;
+      color: #a5f0a3;
+      margin-right: 40px; 
+  }
+  
+  .login-signup {
+      display: flex;
+  }
+  
+  .login-signup a {
+      background: #008200;
+      padding:10px;
+      border-radius: 12px; 
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  .materials {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+  }

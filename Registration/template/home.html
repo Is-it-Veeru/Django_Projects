@@ -1,0 +1,73 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Learning Hub</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+</head>
+<body>
+  <header>
+    <h1>Student Learning Hub</h1>
+    <header>
+        <nav>
+          <a href="#Home">Home</a>
+          <a href="#Courses">Courses</a>
+          <div class="login-signup">
+
+            {% if user.is_authenticated %}
+            <a>Hello, {{user.username}}</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else%}
+            <a href="{% url 'login_page' %}">Login</a>  
+            <a href="{% url 'signup_page'%}">Signup</a>
+            {% endif %}
+          </div>
+        </nav>
+      </header>
+  </header>
+
+
+  <section id="Home">
+    <h2>Mathematics</h2>
+    <div class="materials">
+      <h3>Math - Calculus Introduction</h3>
+      <p>Calculus is a branch of mathematics that deals with the concepts of change and motion. It provides tools and methods for studying how quantities change with respect to one another. Calculus is a fundamental field of mathematics and is widely used in science, engineering, economics, and many other areas. It is primarily divided into two main branches: differential calculus and integral calculus.</p>
+      <h5>For More information Login</h5>
+      {% if user.is_authenticated %}
+      <h4>Differential Calculus:</h4>
+      <p>  Derivatives: Differential calculus focuses on the concept of derivatives, which measure the rate of change of a function. In simple terms, a derivative tells you how a function's output (dependent variable) changes as its input (independent variable) changes. The derivative of a function is often denoted as f'(x) or dy/dx.
+      </p>
+      <p>Limits: The concept of limits is fundamental to calculus. The derivative is defined as the limit of the average rate of change as the change in the independent variable approaches zero.</p>
+      <h4>Integral Calculus:</h4>
+      <p>Integrals: Integral calculus deals with the concept of integrals, which are used to find the accumulation or total of quantities over an interval. Integrals can be thought of as calculating the area under a curve. The integral of a function is often denoted as ∫ f(x) dx.
+      </p>
+      <p>Definite and Indefinite Integrals: Integrals can be classified as definite and indefinite. The indefinite integral, or antiderivative, represents a family of functions whose derivative is the original function. A definite integral calculates the net accumulation of a quantity over a specific interval.</p><br><br>  
+      {% endif %}
+      <h2>Science:  Physics-Chemistry</h2>
+      <p>Physics: Physics is the study of the fundamental principles governing the behavior of the physical world. Courses include classical mechanics, electromagnetism, quantum mechanics, and more.</p>
+      <p>Chemistry: Chemistry explores the properties, composition, and behavior of matter. Courses range from general chemistry to organic and inorganic chemistry.</p>
+      <h5>For more information Login</h5>
+    </div>
+  </section>
+
+  <section id="Courses">
+    <h2>Math</h2>
+    <div class="materials">
+    <h3>Calculus<br> Linear Algebra<br> Differential Equations<br> Statistics<br> Number Theory<br> Abstract Algebra<br> Real Analysis<br> Discrete Mathematics<br> Mathematical Logic</h3>
+    <br> </div>
+    <h2>Science</h2>
+    <div class="materials">
+    <h3>Physics<br> Chemistry<br> Biology<br> Astronomy<br> Environmental Science<br> Geology<br> Computer Science<br> Psychology<br> Neuroscience<br> Materials Science</h3>
+    </div>
+  </section>
+  <section>
+    {% if user.is_authenticated %}
+    <div class="materials">
+    <h3>Calculus:</h3> <p>This course covers both differential and integral calculus, which are fundamental concepts in mathematics.</p> <br> <h3>Linear Algebra:</h3> <p>Linear algebra deals with vector spaces, matrices, and linear equations. It's crucial for various applications in science and engineering.</p> <br> <h3>Differential Equations:</h3> <p>This course explores different types of differential equations and their solutions. It's essential in physics, engineering, and other fields.</p> <br> <h3>Statistics:</h3> <p>Statistics is the study of data analysis and probability, and it's widely used in various scientific disciplines.</p> <br> <h3>Number Theory:</h3> <p>This is the study of properties and relationships of numbers, particularly integers. It's essential in cryptography and computer science.</p> <br> <h3>Abstract Algebra:</h3> <p>Abstract algebra deals with algebraic structures like groups, rings, and fields. It's a foundational topic in mathematics.</p> <br> <h3>Real Analysis:</h3> <p>Real analysis is a rigorous study of real numbers and functions. It's a fundamental course for understanding the theory behind calculus.</p> <br> <h3>Discrete Mathematics:</h3> <p>This course covers topics like combinatorics, graph theory, and logic, which are essential for computer science and cryptography.</p> <br> <h3>Mathematical Logic:</h3> <p>Mathematical logic deals with the formal study of logic and its application in mathematics and computer science.</p><br><br>
+    <h3>Physics:</h3> <p>Physics is the study of the fundamental principles governing the behavior of the physical world. Courses include classical mechanics, electromagnetism, quantum mechanics, and more.</p> <br> <h3>Chemistry:</h3> <p>Chemistry explores the properties, composition, and behavior of matter. Courses range from general chemistry to organic and inorganic chemistry.</p> <br> <h3>Biology:</h3> <p>Biology courses cover a wide range of topics, including cell biology, genetics, ecology, and microbiology.</p> <br> <h3>Astronomy:</h3> <p>Astronomy is the study of celestial objects and the universe. Courses may cover topics like observational astronomy, astrophysics, and cosmology.</p> <br> <h3>Environmental Science:</h3> <p>This field focuses on understanding and addressing environmental issues, such as climate change, conservation, and sustainability.</p> <br> <h3>Geology:</h3> <p>Geology explores the Earth's structure, history, and natural resources. Courses may include mineralogy, petrology, and paleontology.</p> <br> <h3>Computer Science:</h3> <p>While not strictly a science, computer science is a highly mathematical and scientific field. Courses can include algorithms, data structures, artificial intelligence, and more.</p> <br> <h3>Psychology:</h3> <p>Psychology is the scientific study of human behavior and mental processes. Courses can cover areas like cognitive psychology, behavioral psychology, and clinical psychology.</p> <br> <h3>Neuroscience:</h3> <p>Neuroscience delves into the structure and function of the nervous system, including the brain and how it influences behavior.</p> <br> <h3>Materials Science:</h3> <p>Materials science examines the properties and applications of various materials, such as metals, polymers, and ceramics.</p>
+    </div>
+    {% endif %}
+  </section>
+  
+</body>
+</html>

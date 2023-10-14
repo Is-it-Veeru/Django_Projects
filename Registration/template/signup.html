@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css'%}">
+    <style>
+    </style>
+</head>
+<body>   
+    <div class="signup-page">
+        <div class="form">
+            <h1>Signup</h1>
+        <form class="signup-form" action="{% url 'signup_action' %}" method="post">
+            {% csrf_token %} 
+            <input type="text" name="username" placeholder="Name"/>
+            <input type="email" name="email" placeholder="Email address"/>
+            <input type="password" name="password" placeholder="Choose password"/>
+            <button>signup</button>
+            <p class="message">Already registered? <a href="{% url 'login_page' %}">Login</a></p>
+            <a class="Home" href="{% url 'home' %}">Home</a> 
+        </form>
+        </div>
+    </div>
+    <div class="mes">
+        {% for mess in messages %}
+        <h3>{{mess}}</h3>
+        {% endfor %}
+    </div>
+</body>
+</html>
