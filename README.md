@@ -4,6 +4,7 @@ Registration
   This is web application focused on facilitating student learning, and it's built using Django, a popular Python web framework.
 
   Commands used in this project:
+  
     django-admin startproject Registration: This command creates a new Django project named "Registration."
     cd Registration: Changes the current directory to the "Registration" project directory.
     python manage.py startapp app: Initiates the creation of a new Django app named "app" within the project.
@@ -17,6 +18,7 @@ Registration
     
 
   Key Features of the Projects:
+  
     Signup, Login, and Logout: 
       The website provides a user-friendly registration process, allowing students to create an account by providing necessary details such as username, email, and                 password. After registration, students can log in to their accounts. The system also includes a logout option for securely ending a session.
 
